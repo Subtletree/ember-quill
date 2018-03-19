@@ -67,7 +67,9 @@ export default Component.extend({
 
 		let settings = this.getProperties(options);
 
-		settings.modules = this.getProperties(modules);
+		if (!settings.modules) {
+			settings.modules = this.getProperties(modules);
+		}
 
 		// Instantiate the Quill editor instance.
 
